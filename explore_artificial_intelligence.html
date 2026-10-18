@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Artificial Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8fafc;
+            color: #0f172a;
+        }
+        .bg-grid-pattern {
+            background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px);
+            background-size: 28px 28px;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.04), 0 4px 12px -2px rgba(15, 23, 42, 0.02);
+        }
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 35px -10px rgba(37, 99, 235, 0.1), 0 10px 15px -5px rgba(15, 23, 42, 0.04);
+        }
+        .quiz-option {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .quiz-option:hover {
+            border-color: #3b82f6;
+            background-color: #f0f7ff;
+            transform: translateX(2px);
+        }
+        .quiz-option:has(input:checked) {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+            box-shadow: 0 0 0 1.5px #2563eb;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased bg-grid-pattern selection:bg-brand-600 selection:text-white">
+
+    <header class="bg-white/90 backdrop-blur-md border-b border-slate-200/80 sticky top-0 z-50 transition-all shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 bg-gradient-to-tr from-brand-700 via-brand-600 to-indigo-600 text-white rounded-xl shadow-md shadow-brand-500/20 flex items-center justify-center">
+                    <i class="fa-solid fa-brain text-lg"></i>
+                </div>
+                <span class="font-extrabold text-xl text-slate-900 tracking-tight">Explore <span class="text-brand-600">AI</span></span>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-600">
+                <a href="#overview" class="hover:text-brand-600 transition-colors py-1">Overview</a>
+                <a href="#concepts" class="hover:text-brand-600 transition-colors py-1">Core Concepts</a>
+                <a href="#quiz" class="hover:text-brand-600 transition-colors py-1">Test Knowledge</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 md:py-16">
+        <section id="overview" class="text-center max-w-3xl mx-auto mb-14 md:mb-20">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold bg-brand-50 text-brand-700 border border-brand-200/80 mb-5 shadow-sm tracking-wide">
+                <i class="fa-solid fa-graduation-cap text-brand-600"></i> Interactive Student Module
+            </span>
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
+                Explore Artificial <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-indigo-600">Intelligence</span>
+            </h1>
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl mx-auto">
+                Welcome, engineering students! Dive into the fundamental principles of modern intelligence systems, discover machine learning paradigms, and test your understanding with our quick interactive quiz.
+            </p>
+        </section>
+
+        <section id="concepts" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-20">
+            
+            <!-- Card 1: What is AI -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/90 card-shadow card-hover flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-blue-600"></div>
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-blue-50 text-blue-600 border border-blue-100/80 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-3 tracking-tight">What is Artificial Intelligence?</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                        Artificial Intelligence (AI) refers to the simulation of human intelligence in machines designed to think, reason, learn, and solve problems like humans.
+                    </p>
+                </div>
+                <div class="border-t border-slate-100 pt-5 mt-auto">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Real-World Examples</h3>
+                    <ul class="text-sm text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span>Virtual Assistants (Siri, Alexa)</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span>Autonomous Vehicles (Tesla)</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span>Chess & Go engines (AlphaZero)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: What is ML -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/90 card-shadow card-hover flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-indigo-600"></div>
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100/80 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-3 tracking-tight">What is Machine Learning?</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                        Machine Learning (ML) is a subfield of AI that enables systems to learn and improve performance automatically from experience and data without explicit programming.
+                    </p>
+                </div>
+                <div class="border-t border-slate-100 pt-5 mt-auto">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Real-World Examples</h3>
+                    <ul class="text-sm text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span>Spam Filtering in Email</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span>Recommendation Engines (Netflix, Spotify)</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span>Predictive Financial Trading</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: Where is AI used -->
+            <div class="bg-white rounded-2xl p-7 border border-slate-200/90 card-shadow card-hover flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-emerald-600"></div>
+                <div>
+                    <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100/80 flex items-center justify-center text-2xl mb-6 shadow-sm group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-earth-americas"></i>
+                    </div>
+                    <h2 class="text-xl font-bold text-slate-900 mb-3 tracking-tight">Where is AI Used?</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed mb-6 font-normal">
+                        AI applications are transformed across diverse industries, automating complex processes and driving automated decision-making.
+                    </p>
+                </div>
+                <div class="border-t border-slate-100 pt-5 mt-auto">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-3">Domains & Applications</h3>
+                    <ul class="text-sm text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span><strong>Healthcare:</strong> Medical Image Diagnostics</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span><strong>Finance:</strong> Fraud Detection Systems</li>
+                        <li class="flex items-center"><span class="w-5 h-5 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mr-2.5 text-xs flex-shrink-0 border border-emerald-100"><i class="fa-solid fa-check"></i></span><strong>Engineering:</strong> Predictive Maintenance</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <section id="quiz" class="max-w-3xl mx-auto bg-white rounded-3xl border border-slate-200/90 card-shadow p-6 sm:p-10 relative">
+            <div class="border-b border-slate-100 pb-6 mb-8">
+                <div class="flex items-center gap-3 mb-2">
+                    <div class="w-9 h-9 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center text-base border border-brand-100">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 tracking-tight">Knowledge Assessment</h2>
+                </div>
+                <p class="text-sm text-slate-500">Answer all 5 questions below to test your understanding of core AI and Machine Learning concepts.</p>
+            </div>
+
+            <!-- Unanswered Warning Alert -->
+            <div id="unansweredAlert" class="hidden mb-6 p-4 rounded-2xl border border-amber-200 bg-amber-50/80 text-amber-900 text-sm flex items-center gap-3 shadow-sm">
+                <i class="fa-solid fa-triangle-exclamation text-amber-600 text-lg flex-shrink-0"></i>
+                <div>
+                    <p class="font-bold">Incomplete Assessment</p>
+                    <p class="text-xs text-amber-800">Please answer all five questions before submitting your assessment.</p>
+                </div>
+            </div>
+
+            <form id="aiQuizForm" class="space-y-8">
+                <!-- Question 1 -->
+                <div class="space-y-3 bg-slate-50/70 p-5 rounded-2xl border border-slate-200/80 transition-colors" id="group-q1">
+                    <p class="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
+                        <span>1. What is Machine Learning?</span>
+                    </p>
+                    <div class="space-y-2.5 pt-1">
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q1" value="A" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">A physical robot designed for automated manufacturing assembly lines.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q1" value="B" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">A branch of AI that allows systems to learn patterns and improve performance from data automatically.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q1" value="C" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">A traditional relational database management software used to store structured tables.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q1" value="D" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">A specialized hardware circuit designed purely for power grid voltage control.</span>
+                        </label>
+                    </div>
+                    <div id="feedback-q1" class="text-sm font-medium hidden rounded-xl p-3.5 mt-3 shadow-sm"></div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="space-y-3 bg-slate-50/70 p-5 rounded-2xl border border-slate-200/80 transition-colors" id="group-q2">
+                    <p class="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
+                        <span>2. Which of the following is a real-world application of AI in Healthcare?</span>
+                    </p>
+                    <div class="space-y-2.5 pt-1">
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q2" value="A" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">Analyzing medical imaging scans (X-rays, MRIs) to assist clinicians in early disease diagnosis.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q2" value="B" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">Printing paper-based medical invoices and patient billing receipts.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q2" value="C" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">Storing paper health record folders inside hospital filing cabinets.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q2" value="D" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">Manually checking patient temperature using a standard glass thermometer.</span>
+                        </label>
+                    </div>
+                    <div id="feedback-q2" class="text-sm font-medium hidden rounded-xl p-3.5 mt-3 shadow-sm"></div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="space-y-3 bg-slate-50/70 p-5 rounded-2xl border border-slate-200/80 transition-colors" id="group-q3">
+                    <p class="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
+                        <span>3. How does machine learning differ from traditional computer programming?</span>
+                    </p>
+                    <div class="space-y-2.5 pt-1">
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q3" value="A" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">Traditional programming uses data to write code, while ML does not require any data.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q3" value="B" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">ML algorithms infer rules and patterns directly from data, whereas traditional programming relies on explicit human-written rules.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q3" value="C" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">Traditional programming executes faster than machine learning algorithms on all microprocessors.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q3" value="D" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">There is no fundamental functional or logical difference between ML and traditional software engineering.</span>
+                        </label>
+                    </div>
+                    <div id="feedback-q3" class="text-sm font-medium hidden rounded-xl p-3.5 mt-3 shadow-sm"></div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="space-y-3 bg-slate-50/70 p-5 rounded-2xl border border-slate-200/80 transition-colors" id="group-q4">
+                    <p class="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
+                        <span>4. What is the defining characteristic of Supervised Learning?</span>
+                    </p>
+                    <div class="space-y-2.5 pt-1">
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q4" value="A" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">The model is trained using labeled data containing both input features and target output labels.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q4" value="B" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">The algorithm requires a human operator to manually approve every prediction made during runtime.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q4" value="C" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">The model learns entirely without any input training data or pre-existing datasets.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q4" value="D" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">The algorithm updates its parameters based solely on environmental trial-and-error reward signals.</span>
+                        </label>
+                    </div>
+                    <div id="feedback-q4" class="text-sm font-medium hidden rounded-xl p-3.5 mt-3 shadow-sm"></div>
+                </div>
+
+                <!-- Question 5 -->
+                <div class="space-y-3 bg-slate-50/70 p-5 rounded-2xl border border-slate-200/80 transition-colors" id="group-q5">
+                    <p class="font-bold text-slate-900 text-base leading-snug flex items-center gap-2">
+                        <span>5. Which statement accurately describes the relationship between AI and Machine Learning?</span>
+                    </p>
+                    <div class="space-y-2.5 pt-1">
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q5" value="A" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">AI is a narrow subset of Machine Learning that only applies to robotics.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q5" value="B" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">Machine Learning and AI are identical terms describing the exact same technical concept.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q5" value="C" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">AI represents the overarching field of intelligent systems, while Machine Learning is a specific subfield focused on data-driven learning.</span>
+                        </label>
+                        <label class="flex items-start p-3.5 rounded-xl border border-slate-200 bg-white cursor-pointer quiz-option">
+                            <input type="radio" name="q5" value="D" class="mt-0.5 h-4 w-4 text-brand-600 focus:ring-brand-500 border-slate-300">
+                            <span class="ml-3 text-sm text-slate-700 font-medium leading-relaxed">Machine Learning preceded Artificial Intelligence historically by several decades.</span>
+                        </label>
+                    </div>
+                    <div id="feedback-q5" class="text-sm font-medium hidden rounded-xl p-3.5 mt-3 shadow-sm"></div>
+                </div>
+
+                <!-- Submission Controls -->
+                <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <button type="button" id="submitBtn" onclick="evaluateQuiz()" class="w-full sm:w-auto px-7 py-3 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-700 hover:to-brand-800 text-white font-bold rounded-xl shadow-md shadow-brand-500/20 active:scale-[0.98] transition-all text-sm flex items-center justify-center gap-2">
+                        <span>Submit Assessment</span>
+                        <i class="fa-solid fa-paper-plane text-xs"></i>
+                    </button>
+                    <button type="button" id="resetBtn" onclick="resetQuiz()" class="hidden w-full sm:w-auto px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl transition-all text-sm">
+                        Reset Quiz
+                    </button>
+                </div>
+            </form>
+
+            <!-- Final Results Box -->
+            <div id="scoreContainer" class="hidden mt-8 p-6 rounded-2xl border text-center transition-all">
+                <p class="text-xl font-bold" id="scoreText"></p>
+                <p class="text-sm mt-1 font-medium" id="scoreDescription"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200/80 mt-16 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center text-xs text-slate-500 font-medium">
+            <p>&copy; Explore Artificial Intelligence — Interactive Learning Portal for Engineering Students</p>
+        </div>
+    </footer>
+
+    <script>
+        const correctAnswers = {
+            q1: "B",
+            q2: "A",
+            q3: "B",
+            q4: "A",
+            q5: "C"
+        };
+
+        const explanations = {
+            q1: {
+                correct: "Correct! Machine Learning enables systems to learn patterns and make predictions directly from sample data without explicit step-by-step programming.",
+                incorrect: "Incorrect. Option B is correct. Machine Learning algorithms automatically learn predictive patterns directly from training data."
+            },
+            q2: {
+                correct: "Correct! Computer vision and AI models analyze medical imaging (X-rays, CT scans, MRIs) to assist clinicians with early disease detection.",
+                incorrect: "Incorrect. Option A is correct. Medical image analysis for early diagnostic support is a prominent application of AI in healthcare."
+            },
+            q3: {
+                correct: "Correct! In traditional programming, developers handcraft explicit rules. In ML, algorithms infer complex rules directly from input data.",
+                incorrect: "Incorrect. Option B is correct. Machine learning automatically extracts rules and insights from input data rather than relying solely on human-written code."
+            },
+            q4: {
+                correct: "Correct! Supervised Learning relies on pairs of input features alongside corresponding target ground-truth output labels during training.",
+                incorrect: "Incorrect. Option A is correct. Supervised learning utilizes labeled datasets where both input variables and desired output labels are provided."
+            },
+            q5: {
+                correct: "Correct! Artificial Intelligence is the broad umbrella term for smart systems, while Machine Learning is a specific methodology under AI.",
+                incorrect: "Incorrect. Option C is correct. AI encompasses the overall vision of intelligent machines, whereas ML is a subfield focused on data-driven learning."
+            }
+        };
+
+        function evaluateQuiz() {
+            const form = document.getElementById('aiQuizForm');
+            const alertBox = document.getElementById('unansweredAlert');
+            const totalQuestions = 5;
+            let score = 0;
+            let missingQuestions = [];
+
+            // Verify if all 5 questions are answered and highlight unanswered ones
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = form.querySelector(`input[name="q${i}"]:checked`);
+                const questionContainer = document.getElementById(`group-q${i}`);
+                
+                if (!selectedOption) {
+                    missingQuestions.push(i);
+                    questionContainer.classList.add('border-amber-300', 'bg-amber-50/50');
+                } else {
+                    questionContainer.classList.remove('border-amber-300', 'bg-amber-50/50');
+                }
+            }
+
+            // Block submission and display warning banner if any of the 5 questions are missing
+            if (missingQuestions.length > 0) {
+                alertBox.classList.remove('hidden');
+                document.getElementById('scoreContainer').classList.add('hidden');
+                
+                // Scroll smoothly to first unanswered question block
+                const firstUnanswered = document.getElementById(`group-q${missingQuestions[0]}`);
+                firstUnanswered.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
+
+            // Hide warning alert when validation passes
+            alertBox.classList.add('hidden');
+
+            // Grade all 5 questions and display detailed per-question feedback
+            for (let i = 1; i <= totalQuestions; i++) {
+                const qKey = `q${i}`;
+                const selectedOption = form.querySelector(`input[name="${qKey}"]:checked`).value;
+                const feedbackEl = document.getElementById(`feedback-${qKey}`);
+
+                feedbackEl.className = "text-sm font-medium rounded-xl p-3.5 mt-3 shadow-sm border flex items-start gap-2.5";
+
+                if (selectedOption === correctAnswers[qKey]) {
+                    score++;
+                    feedbackEl.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 text-base mt-0.5 flex-shrink-0"></i> <div>${explanations[qKey].correct}</div>`;
+                    feedbackEl.classList.add('bg-emerald-50', 'text-emerald-900', 'border-emerald-200');
+                } else {
+                    feedbackEl.innerHTML = `<i class="fa-solid fa-circle-xmark text-rose-600 text-base mt-0.5 flex-shrink-0"></i> <div>${explanations[qKey].incorrect}</div>`;
+                    feedbackEl.classList.add('bg-rose-50', 'text-rose-900', 'border-rose-200');
+                }
+            }
+
+            // Display final calculated score out of 5
+            const scoreContainer = document.getElementById('scoreContainer');
+            const scoreText = document.getElementById('scoreText');
+            const scoreDescription = document.getElementById('scoreDescription');
+
+            scoreContainer.classList.remove('hidden');
+
+            if (score === totalQuestions) {
+                scoreContainer.className = "mt-8 p-6 rounded-2xl border border-emerald-200 bg-emerald-50/80 text-emerald-900 text-center shadow-sm";
+                scoreText.innerHTML = `<i class="fa-solid fa-trophy text-emerald-600 mr-2"></i> Outstanding! Score: ${score}/${totalQuestions}`;
+                scoreDescription.innerText = "You scored 100%! You have a strong grasp of foundational AI, Supervised Learning, and Machine Learning principles.";
+                scoreDescription.className = "text-sm mt-1 font-medium text-emerald-800";
+            } else if (score >= 3) {
+                scoreContainer.className = "mt-8 p-6 rounded-2xl border border-blue-200 bg-blue-50/80 text-blue-900 text-center shadow-sm";
+                scoreText.innerHTML = `<i class="fa-solid fa-chart-line text-blue-600 mr-2"></i> Good Job! Score: ${score}/${totalQuestions}`;
+                scoreDescription.innerText = "Review the explanation feedback above to clarify missed questions.";
+                scoreDescription.className = "text-sm mt-1 font-medium text-blue-800";
+            } else {
+                scoreContainer.className = "mt-8 p-6 rounded-2xl border border-amber-200 bg-amber-50/80 text-amber-900 text-center shadow-sm";
+                scoreText.innerHTML = `<i class="fa-solid fa-book-open text-amber-600 mr-2"></i> Score: ${score}/${totalQuestions}`;
+                scoreDescription.innerText = "Re-read the educational cards above and retry the quiz to improve your knowledge!";
+                scoreDescription.className = "text-sm mt-1 font-medium text-amber-800";
+            }
+
+            // Show reset button
+            document.getElementById('resetBtn').classList.remove('hidden');
+        }
+
+        function resetQuiz() {
+            document.getElementById('aiQuizForm').reset();
+            document.getElementById('unansweredAlert').classList.add('hidden');
+            
+            for (let i = 1; i <= 5; i++) {
+                const feedbackEl = document.getElementById(`feedback-q${i}`);
+                if (feedbackEl) {
+                    feedbackEl.classList.add('hidden');
+                    feedbackEl.innerHTML = "";
+                }
+                const questionContainer = document.getElementById(`group-q${i}`);
+                if (questionContainer) {
+                    questionContainer.classList.remove('border-amber-300', 'bg-amber-50/50');
+                }
+            }
+
+            const scoreContainer = document.getElementById('scoreContainer');
+            scoreContainer.classList.add('hidden');
+            
+            document.getElementById('resetBtn').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
